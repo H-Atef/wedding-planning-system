@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/user
+    username: moghoneim
+    password: moghoneim
+    driver-class-name: org.postgresql.Driver
+  jpa:
+      hibernate:
+        ddl-auto: update
+      database: postgresql
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  application:
+    name: user-service
+
+server:
+  port:8082
