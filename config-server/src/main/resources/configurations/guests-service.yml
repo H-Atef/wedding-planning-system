@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/Wedding
-    username: postgres
-    password: 123456
+    url: jdbc:postgresql://localhost:5432/user
+    username: moghoneim
+    password: moghoneim
   jpa:
     properties:
       hibernate:
@@ -14,6 +14,9 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+  application:
+    name: user-service
 
 server:
   port: 8081

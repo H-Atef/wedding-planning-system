@@ -2,7 +2,7 @@ package com.moghoneim.user_service.service.impl;
 
 import com.moghoneim.user_service.dto.UserDto;
 import com.moghoneim.user_service.dto.mapper.UserMapper;
-import com.moghoneim.user_service.model.User;
+import com.moghoneim.user_service.model.UserEntity;
 import com.moghoneim.user_service.repository.UserRepository;
 import com.moghoneim.user_service.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUser(Long id) {
-        Optional<User> user = userRepository.findById(id);
+        Optional<UserEntity> user = userRepository.findById(id);
         if(user.isPresent()) {
             userRepository.delete(user.get());
         }
@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto updateUser(String userEmail, UserDto userDto) {
-        Optional<User> user = userRepository.findByEmail(userEmail);
+        Optional<UserEntity> user = userRepository.findByEmail(userEmail);
         if(user.isPresent()){
             user.get().setFirstName(userDto.getFirstName());
             user.get().setLastName(userDto.getLastName());
