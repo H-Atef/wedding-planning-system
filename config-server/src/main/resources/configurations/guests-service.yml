@@ -16,7 +16,7 @@ spring:
     show-sql: true
 
   application:
-    name: user-service
+    name: guests-service
 
 server:
   port: 8081

@@ -39,16 +39,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto updateUser(String userEmail, UserDto userDto) {
+    public void updateUser(String userEmail, UserDto userDto) {
         Optional<UserEntity> user = userRepository.findByEmail(userEmail);
         if(user.isPresent()){
             user.get().setFirstName(userDto.getFirstName());
             user.get().setLastName(userDto.getLastName());
             user.get().setEmail(userDto.getEmail());
             user.get().setPassword(userDto.getPassword());
-            return userMapper.toDto(user.get());
+            userRepository.save(user.get());
         }
-        return new UserDto();
     }
 
 }

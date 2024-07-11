@@ -8,5 +8,5 @@ public interface UserService {
     void registerUser(UserDto userDto);
     void deleteUser(Long id);
     List<UserDto> getUsers();
-    UserDto updateUser(String userEmail, UserDto userDto);
+    void updateUser(String userEmail, UserDto userDto);
 }

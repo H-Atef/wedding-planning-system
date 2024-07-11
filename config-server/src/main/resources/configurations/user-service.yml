@@ -14,4 +14,4 @@ spring:
     name: user-service
 
 server:
-  port:8082
+  port: 8082
