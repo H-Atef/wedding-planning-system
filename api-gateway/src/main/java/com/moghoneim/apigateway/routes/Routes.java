@@ -18,6 +18,27 @@ public class Routes {
                         HandlerFunctions.http("http://localhost:8082/")).build();
     }
 
+    @Bean
+    RouterFunction<ServerResponse> guestsServiceRoute() {
+        return GatewayRouterFunctions.route("guests_service")
+                .route(RequestPredicates.path("/api/v1/guests/**"),
+                        HandlerFunctions.http("http://localhost:8081/")).build();
+    }
+
+    @Bean
+    RouterFunction<ServerResponse> rsvpServiceRoute() {
+        return GatewayRouterFunctions.route("rsvp_service")
+                .route(RequestPredicates.path("/api/v1/rsvp/**"),
+                        HandlerFunctions.http("http://localhost:8083/")).build();
+    }
+
+    @Bean
+    RouterFunction<ServerResponse> vendorsServiceRoute() {
+        return GatewayRouterFunctions.route("users_service")
+                .route(RequestPredicates.path("/api/v1/vendors/**"),
+                        HandlerFunctions.http("http://localhost:8085/")).build();
+    }
+
 
 
     @Bean
