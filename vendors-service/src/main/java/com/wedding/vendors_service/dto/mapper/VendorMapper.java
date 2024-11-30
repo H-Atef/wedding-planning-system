@@ -8,12 +8,29 @@ import org.springframework.stereotype.Component;
 @Component
 public class VendorMapper {
 
-    // Method to convert VendorRequest to VendorInfo
+    public VendorInfo toVendorInfo(VendorResponse vendorResponse, String dataSource) {
+        if (vendorResponse == null) {
+            return null;
+        }
+
+        return VendorInfo.builder()
+                .vendorName(vendorResponse.getVendorName())
+                .vendorLink(vendorResponse.getVendorLink())
+                .vendorDescription(vendorResponse.getVendorDescription())
+                .vendorCategory(vendorResponse.getVendorCategory())
+                .vendorLocations(vendorResponse.getVendorLocations())
+                .vendorPrice(vendorResponse.getVendorPrice())
+                .vendorPhoneNumbers(vendorResponse.getVendorPhoneNumbers())
+                .vendorFollowersNum(vendorResponse.getVendorFollowersNum())
+                .vendorFollowingNum(vendorResponse.getVendorFollowingNum())
+                .dataSource(dataSource)
+                .build();
+    }
+
     public VendorInfo toVendorInfo(VendorRequest vendorRequest) {
         if (vendorRequest == null) {
             return null;
         }
-
         return VendorInfo.builder()
                 .vendorName(vendorRequest.getVendorName())
                 .vendorLink(vendorRequest.getVendorLink())
@@ -43,6 +60,7 @@ public class VendorMapper {
                 .vendorPhoneNumbers(vendorInfo.getVendorPhoneNumbers())
                 .vendorFollowersNum(vendorInfo.getVendorFollowersNum())
                 .vendorFollowingNum(vendorInfo.getVendorFollowingNum())
+                .dataSource(vendorInfo.getDataSource())
                 .build();
     }
 }

@@ -38,4 +38,6 @@ public class VendorResponse {
 
     @JsonProperty("vendor_following_num")
     private String vendorFollowingNum;
+
+    private String dataSource;
 }

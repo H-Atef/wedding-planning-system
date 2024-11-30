@@ -26,4 +26,5 @@ public class VendorInfo {
     private String vendorPhoneNumbers;
     private String vendorFollowersNum;
     private String vendorFollowingNum;
+    private String dataSource = "Spring";
 }

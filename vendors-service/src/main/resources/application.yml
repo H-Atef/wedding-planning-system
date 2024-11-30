@@ -3,3 +3,9 @@ spring:
         import: optional:configserver:http://localhost:8888
     application:
         name: vendors-service
+
+
+vendors:
+    api:
+        base-url: http://localhost:8000/vendors/all-vendor-info
+        category-url: /get-vendors-by-category/
