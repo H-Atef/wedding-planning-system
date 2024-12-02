@@ -1,4 +1,4 @@
-package com.moghoneim.apigateway.config;
+package com.wedding.rsvp_service.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
