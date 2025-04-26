@@ -1,6 +1,7 @@
 package com.moghoneim.user_service.external.client;
 
 
+import com.moghoneim.user_service.config.FeignClientConfig;
 import com.moghoneim.user_service.external.dto.GuestRequest;
 import com.moghoneim.user_service.external.dto.GuestResponse;
 import jakarta.validation.Valid;
@@ -10,7 +11,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(value = "GUESTS-SERVICE")
+@FeignClient(
+        name = "GUESTS-SERVICE",
+        configuration = FeignClientConfig.class
+)
 public interface GuestFeignClient {
 
     @GetMapping("/api/v1/guests/guest-list/{user-id}")

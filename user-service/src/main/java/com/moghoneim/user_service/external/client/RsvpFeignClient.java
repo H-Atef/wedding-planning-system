@@ -1,11 +1,15 @@
 package com.moghoneim.user_service.external.client;
 
+import com.moghoneim.user_service.config.FeignClientConfig;
 import com.moghoneim.user_service.external.dto.RsvpRequest;
 import com.moghoneim.user_service.external.dto.RsvpResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient("RSVP-SERVICE")
+@FeignClient(
+        value = "RSVP-SERVICE",
+        configuration = FeignClientConfig.class
+)
 public interface RsvpFeignClient {
 
     @GetMapping("/api/v1/rsvp/user-rsvp/{user-id}")
